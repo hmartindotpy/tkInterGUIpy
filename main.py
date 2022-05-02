@@ -2,20 +2,20 @@ import tkinter as tk
 import tkinter.messagebox
 
 def onClick():
-    tkinter.messagebox.showinfo("title","enter message here")
-f = ""
+    f = fname.get()
+    tkinter.messagebox.showinfo("hi there","hello " + f)
+
 window = tk.Tk()
 
 greeting = tk.Label(
-    text="Hello world",
+    text="Hello there",
     bg="BurlyWood",
     fg="white"
     )
 greeting.pack()
 
-
-    
-
+fname = tk.Entry()
+fname.pack()
 
 clickme = tk.Button(
     text="dont click me",
@@ -26,9 +26,5 @@ clickme = tk.Button(
     command=onClick
     )
 clickme.pack()
-
-fname = tk.Entry()
-fname.pack()
-f = fname.get()
 
 window.mainloop()
