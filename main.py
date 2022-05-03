@@ -30,9 +30,11 @@ clickme = tk.Button(
     fg="yellow",
     command=lambda:showOutput(getInput())
     )
-x.pack()
-y.pack()
-clickme.pack()
-lblenterx.pack()
-lblentery.pack()
+lblenterx.grid(row=0, column=0, padx=10, pady=10)
+x.grid(row=0, column=1, pady=10)
+lblentery.grid(row=1, column=0, padx=10, pady=10)
+y.grid(row=1, column=1, pady=10)
+clickme.grid(row=0, column=2, padx=10, pady=10, rowspan=2)
+
+
 window.mainloop()
