@@ -1,30 +1,38 @@
 import tkinter as tk
 import tkinter.messagebox
 
-def onClick():
-    f = fname.get()
-    tkinter.messagebox.showinfo("hi there","hello " + f)
-
+def showOutput(a):
+    tk.messagebox.showinfo("Answer",f"The answer is {a}.")
+    window.destroy()
+def getInput():
+    ans = int(x.get()) * int(y.get())
+    return ans
 window = tk.Tk()
-
-greeting = tk.Label(
-    text="Hello there",
+window.geometry("400x300")
+lblenterx = tk.Label(
+    text="enter x:",
     bg="BurlyWood",
     fg="white"
     )
-greeting.pack()
+x = tk.Entry()
+lblentery = tk.Label(
+    text="enter y:",
+    bg="BurlyWood",
+    fg="white"
+    )
 
-fname = tk.Entry()
-fname.pack()
-
+y = tk.Entry()
 clickme = tk.Button(
     text="dont click me",
     width=25,
     height=5,
     bg="blue",
     fg="yellow",
-    command=onClick
+    command=lambda:showOutput(getInput())
     )
+x.pack()
+y.pack()
 clickme.pack()
-
+lblenterx.pack()
+lblentery.pack()
 window.mainloop()
